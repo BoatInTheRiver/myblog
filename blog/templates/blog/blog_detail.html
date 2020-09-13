@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
     <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
     <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+
 {% endblock %}
 
 {# 页面内容 #}
@@ -128,10 +129,10 @@
         String.prototype.format = function(){
             var str = this;
             for (var i = 0; i < arguments.length; i++) {
-                var str = str.replace(new RegExp('\\{' + i + '\\}', 'g'), arguments[i])
-            };
+                str = str.replace(new RegExp('\\{' + i + '\\}', 'g'), arguments[i])
+            }
             return str;
-        }
+        };
         function reply(reply_comment_id){
             // 设置值
             $('#reply_comment_id').val(reply_comment_id);

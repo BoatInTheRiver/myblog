@@ -15,7 +15,7 @@ class BlogType(models.Model):
 class Blog(models.Model, ReadnumExpandMethod):
     title = models.CharField(max_length=50)
     blog_type = models.ForeignKey(BlogType, on_delete=models.CASCADE)
-    content = RichTextUploadingField()
+    content = RichTextUploadingField(config_name='my_config')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_time = models.DateTimeField(auto_now_add=True)
     last_updated_time = models.DateTimeField(auto_now_add=True)
