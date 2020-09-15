@@ -11,8 +11,10 @@
 
 {% block header_extends %}
     <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
     <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
     <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+    <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
 
 {% endblock %}
 

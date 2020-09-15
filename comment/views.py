@@ -8,7 +8,6 @@ from .forms import CommmentForm
 
 
 def update_comment(request):
-    referer = request.META.get('HTTP_REFERER', reverse('home'))
     comment_form = CommmentForm(request.POST, user=request.user)
 
     if comment_form.is_valid():
@@ -40,7 +39,6 @@ def update_comment(request):
         data['pk'] = comment.pk
         data['root_pk'] = comment.root.pk if not comment.root is None else ''
     else:
-        #return render(request, 'error.html', {'message': comment_form.errors, 'redirect_to': referer})
         data = {}
         data['status'] = 'ERROR'
         data['message'] = list(comment_form.errors.values())[0][0]
